@@ -11,8 +11,8 @@ phases:
       - ls -lh target
   post_build:
     commands:
-      - echo "Copying .jar to root as application.jar"
-      - cp target/*.jar application.jar
+      - echo "Copying Spring Boot JAR to root as application.jar"
+      - cp target/shop-0.0.1-SNAPSHOT.jar application.jar
       - ls -l application.jar
 
 artifacts:

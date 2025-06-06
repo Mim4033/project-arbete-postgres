@@ -63,7 +63,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
         <!-- Spring Boot Test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,10 +87,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
-
-
     </dependencies>
-
  <profiles> 
 
    <profile>
@@ -103,31 +99,31 @@
 	 	<activatedProperties>dev</activatedProperties>
       </properties>	 
    </profile>
-
-
-
-
-
-
-
-   <profile>
-     <id>production</id>
- 	<properties>
-	 	<activatedProperties>production</activatedProperties>
-      </properties>	 
-         <build>
+    <profile>
+        <id>production</id>
+        <properties>
+            <activatedProperties>production</activatedProperties>
+        </properties>
+        <build>
             <plugins>
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-compiler-plugin</artifactId>
-                  <configuration>
-                      <debug>false</debug> 
-                      <optimize>true</optimize>
-                  </configuration>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <debug>false</debug>
+                        <optimize>true</optimize>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <jvmArguments>--enable-preview</jvmArguments>
+                    </configuration>
                 </plugin>
             </plugins>
-         </build>
-   </profile>
+        </build>
+    </profile>
  </profiles>
 
     <build>
